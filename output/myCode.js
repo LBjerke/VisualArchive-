@@ -950,6 +950,10 @@ var _reactDom = __webpack_require__(18);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
+var _index = __webpack_require__(27);
+
+var _index2 = _interopRequireDefault(_index);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -970,10 +974,16 @@ var HelloWorld = function (_React$Component) {
   _createClass(HelloWorld, [{
     key: 'render',
     value: function render() {
+      var wordStyle = {
+        color: '#FF0000'
+
+      };
       return _react2.default.createElement(
-        'p',
-        null,
-        ' Hello, ',
+        'div',
+        { style: wordStyle },
+        ' ',
+        _index2.default.getDay(0),
+        ', ',
         this.props.greetTarget
       );
     }
@@ -18291,6 +18301,40 @@ function camelize(string) {
 }
 
 module.exports = camelize;
+
+/***/ }),
+/* 27 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+    months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+function getDays() {
+    return days;
+};
+
+function getMonths() {
+    return months;
+};
+
+function getDay(dayNumber) {
+    return Number.isInteger(dayNumber) && dayNumber <= days.length - 1 ? days[dayNumber] : '';
+};
+
+function getMonth(monthNumber) {
+    return Number.isInteger(monthNumber) && monthNumber <= months.length - 1 ? months[monthNumber] : '';
+};
+
+// export the module
+module.exports = {
+    getDays: getDays,
+    getMonths: getMonths,
+    getDay: getDay,
+    getMonth: getMonth
+};
 
 /***/ })
 /******/ ]);

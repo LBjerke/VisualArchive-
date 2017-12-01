@@ -1,11 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
+import FirstModule from './modules/index';
 class HelloWorld extends React.Component {
+
+
+
   render () {
-    return <p> Hello, {this.props.greetTarget}</p>;
+    var wordStyle = {
+      color : '#FF0000',
+
+    };
+    return <div style={wordStyle}> {FirstModule.getDay(0)}, {this.props.greetTarget}</div>;
   }
 }
+
 
 ReactDOM.render(<div>
   <HelloWorld greetTarget="Batman"/>
